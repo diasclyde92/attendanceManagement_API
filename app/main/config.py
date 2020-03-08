@@ -7,13 +7,6 @@ class Config:
     DEBUG = False
 
 
-class LocalConfig(Config):
-    TESTING = True
-    DEBUG = True
-    MONGODB_SETTINGS = {'DB': 'onguardNxt_local'}
-    SECRET_KEY = 'flask+mongoengine=<3'
-
-
 class DevelopmentConfig(Config):
     TESTING = True
     DEBUG = True
@@ -24,22 +17,13 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     DEBUG = False
     TESTING = True
-    MONGODB_SETTINGS = {'DB': 'test_test'}
+    MONGODB_SETTINGS = {'DB': 'attendance_management_test'}
     SECRET_KEY = 'flask+mongoengine=<3'
 
 
-class ProductionConfig(Config):
-    DEBUG = False
-    TESTING = False
-    MONGODB_SETTINGS = {'DB': 'onguardNxt', 'USERNAME': 'onguardNxt', 'PASSWORD': ''}
-    SECRET_KEY = '#Onguard123'
-
-
 config_by_name = dict(
-    LOCAL=LocalConfig,
     DEV=DevelopmentConfig,
-    TEST=TestingConfig,
-    PROD=ProductionConfig
+    TEST=TestingConfig
 )
 
 key = Config.SECRET_KEY

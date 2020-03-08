@@ -12,9 +12,9 @@ app.register_blueprint(blueprint)
 app.app_context().push()
 jwt = JWTManager(app)
 manager = Manager(app)
-CORS(app)
+# CORS(app)
 # app.run()
-
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 @manager.command
 def test():

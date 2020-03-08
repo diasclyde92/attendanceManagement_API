@@ -1,11 +1,4 @@
-"""
-* Name: user_types_service.py
-* Description : All User types related functions
-* Author: www.opspl.com
-* Date Created: 2nd Dec 2019
-* Date Modified: 2nd Dec 2019
-*
-"""
+
 
 from app.main.model.users import Users
 import uuid
@@ -138,6 +131,7 @@ def login_user(data):
         response_object = {
             'status': Const.SUCCESS,
             'token': token,
+            'publicId': str(item['publicId']),
             'message': 'Authentication Success.'
         }
         return response_object
@@ -146,3 +140,4 @@ def login_user(data):
         'message': 'Incorrect username or password.'
     }
     return response_object
+

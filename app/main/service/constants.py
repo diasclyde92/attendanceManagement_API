@@ -1,11 +1,4 @@
-"""
-* Name: constants.py
-* Description : All website constants are defined here
-* Author: www.opspl.com
-* Date Created: 2nd Dec 2019
-* Date Modified: 2nd Dec 2019
-*
-"""
+
 
 from flask_restplus import reqparse
 from flask_restplus import fields
@@ -50,9 +43,9 @@ class Const():
     FAILURE_CODE = 400
 
     # User Types
-    USER_TYPE_INSERT_SUCCESS = 'User type added successfully.'
-    USER_TYPE_UPDATE_SUCCESS = 'User type updated successfully.'
-    USER_TYPE_DELETE_SUCCESS = 'User type deleted successfully.'
+    USER_TYPE_INSERT_SUCCESS = 'User added successfully.'
+    USER_TYPE_UPDATE_SUCCESS = 'User updated successfully.'
+    USER_TYPE_DELETE_SUCCESS = 'User deleted successfully.'
 
 
 class TimeFormat(fields.DateTime):
@@ -71,7 +64,7 @@ class DevelopmentConst(Const):
 
 class TestingConst(Const):
     APP_DEBUG = False
-    BASE_URL = "http://ogapi.ho.opspl.com"
+    BASE_URL = ""
 
 
 class ProductionConst(Const):
