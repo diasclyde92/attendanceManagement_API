@@ -45,7 +45,7 @@ class AttendanceRecords(Resource):
     @api.expect(parser, validate=True)
     @api.marshal_list_with(_fetch_attendance_records, envelope='data')
     def get(self):
-        """List all Attendance records"""
+        """List Attendance records"""
         args = parser.parse_args()
         return fetch_attendance_records(data=args)
 
